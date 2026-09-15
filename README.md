@@ -1,5 +1,15 @@
 # 20231683 Ariana Louro
 
+The accuracy of Decision Tree is better, but it is overfitting since the accuracy of the training data is higher than the testing data.
+
+Accuracy of Decision Tree:
+Train accuracy: 0.829
+Test accuracy:  0.632
+
+Accuracy of Logistic Regression:
+Train accuracy: 0.679
+Test accuracy:  0.680
+
 # Baseline Predictive Pipeline -- ETAI
 
 This is the **starting point** for your semester project: a small but *complete* predictive pipeline -- every piece a real project needs (entry point, config, data loading, preprocessing, model, evaluation), just kept as simple as possible for now.
