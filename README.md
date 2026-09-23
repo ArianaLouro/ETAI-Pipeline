@@ -1,5 +1,6 @@
 # 20231683 Ariana Louro
 
+# Week2
 The accuracy of Decision Tree is better, but it is overfitting since the accuracy of the training data is higher than the testing data.
 
 Accuracy of Decision Tree:
@@ -9,6 +10,31 @@ Test accuracy:  0.632
 Accuracy of Logistic Regression:
 Train accuracy: 0.679
 Test accuracy:  0.680
+
+# Week 3
+
+We first performed EDA to understand and diagnose the COMPAS dataset. We checked data types, missing values, invalid values, hidden placeholders, inconsistent categories, duplicates, correlations, and multicollinearity. We also analyzed the missingness mechanism and identified redundant variables. These findings were saved in a diagnosis log.
+
+Then, in the preprocessing notebook, we created a reusable cleaning pipeline based on the EDA conclusions. We normalized categories, converted invalid values to missing values, removed duplicates and redundant features, and defined imputation strategies.
+
+After splitting the data, all learned preprocessing steps were fitted only on the training set to avoid data leakage. We tested different combinations of encoding and scaling methods using Logistic Regression.
+
+The best average result was obtained with Target Encoding + Standard Scaling, although its performance was very similar to Target Encoding + Robust Scaling.
+
+Overall workflow:
+
+EDA → diagnose data problems → clean data → split train/test → impute → encode → scale → train model → compare preprocessing strategies.
+
+Results: Both models have the same training accuracy (0.792), while the Decision Tree performs slightly better on the test set (0.613 vs. 0.612).
+The difference is negligible, so their generalization performance is essentially the same.
+
+Accuracy of Decision Tree:
+Train accuracy: 0.792
+Test accuracy:  0.613
+
+Accuracy of Logistic Regression:
+Train accuracy: 0.792
+Test accuracy:  0.612
 
 # Baseline Predictive Pipeline -- ETAI
 
