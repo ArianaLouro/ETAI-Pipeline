@@ -1,6 +1,6 @@
 # 20231683 Ariana Louro
 
-# Week2
+# Week 2
 The accuracy of Decision Tree is better, but it is overfitting since the accuracy of the training data is higher than the testing data.
 
 Accuracy of Decision Tree:
@@ -35,6 +35,31 @@ Test accuracy:  0.613
 Accuracy of Logistic Regression:
 Train accuracy: 0.792
 Test accuracy:  0.612
+
+# Week 4
+
+Last week, without cross-validation, both Decision Tree and Logistic Regression achieved similar results, with a training accuracy of 0.792 and test accuracies of 0.613 and 0.612, respectively. 
+
+This week, using 5-fold cross-validation, the results provide a more reliable estimate of model performance: - -Logistic Regression achieved the best validation accuracy (0.672) with a very small train-validation gap (0.003), showing good generalization.
+-Random Forest obtained a validation accuracy of 0.650, showing a larger gap between training and validation performance.
+-Decision Tree achieved 0.612, showing a larger gap between training and validation performance.
+
+Overall, cross-validation suggests that Logistic Regression is the most stable of the tested models.
+
+Accuracy of Logistic Regression:
+Train       mean = 0.675   std = 0.003
+Validation  mean = 0.672   std = 0.013
+Gap         mean = +0.003   std = 0.016
+
+Accuracy of Decision Tree:
+Train       mean = 0.694   std = 0.013
+Validation  mean = 0.612   std = 0.013
+Gap         mean = +0.082   std = 0.023
+
+Accuracy of Random Forest:
+Train       mean = 0.733   std = 0.018
+Validation  mean = 0.650   std = 0.018
+Gap         mean = +0.083   std = 0.017
 
 # Baseline Predictive Pipeline -- ETAI
 
