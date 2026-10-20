@@ -61,13 +61,12 @@ preprocessing:
     categorical_strategy: "most_frequent"
 
 model:
-  type: "adaboost"     # dummy | logistic_regression | decision_tree | random_forest | oblique_random_forest | adaboost
+  type: "oblique_random_forest"     # dummy | logistic_regression | decision_tree | random_forest | oblique_random_forest | adaboost
   params:
-    max_depth: 1
     n_estimators: 200
-    learning_rate: 1.0
+    n_components: 10
     random_state: 42
-              # -1 = all CPU cores
+    n_jobs: -1
   # Other models' params, to swap in:
   # decision_tree:          {random_state: 42}
   # logistic_regression:    {max_iter: 2000}
