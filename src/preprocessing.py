@@ -114,6 +114,22 @@ def add_missingness_indicators(df: pd.DataFrame, mnar_indicator_sources: list) -
             out[f"{col}_was_missing"] = out[col].isna().astype(int)
     return out
 
+def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+
+    # Feature 1: Criminal history adjusted for adult age
+    out["priors_per_adult_year"] = (
+        out["priors_count"] / (out["age"] - 17).clip(lower=1)
+    )
+
+    # Feature 2: Weighted juvenile offense severity
+    out["juvenile_offense_severity"] = (
+        3 * out["juv_fel_count"]
+        + 2 * out["juv_misd_count"]
+        + out["juv_other_count"]
+    )
+
+    return out
 
 def split_features_target(df: pd.DataFrame, data_config: dict, mnar_indicator_sources: list):
     """
